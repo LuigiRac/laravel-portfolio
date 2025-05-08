@@ -20,6 +20,9 @@
             <td>{{$project -> name}}</td>
             <td><a href="{{$project -> repo}}">{{$project -> repo}}</a></td>
             <td>{{$project -> description}}</td>
+            <td>
+              <a href="{{route('project.show', $project -> id)}}">Visualizza</a>
+            </td>
         </tr>
 
         @endforeach
