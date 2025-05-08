@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function index(){
-        return dd(Auth::user());
+        
+        return Auth::user();
     }
 }
