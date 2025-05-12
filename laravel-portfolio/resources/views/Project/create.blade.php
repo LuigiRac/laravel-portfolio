@@ -14,8 +14,7 @@
 
     <div class="form-control mb-3 d-flex flex-column">
         <label for="repo">Url Repo</label>
-        <input type="text" name="repo" id="repo"onblur="validateSingleUrl(this)">
-        <small id="urlHelp" class="form-text text-muted"></small>
+        <input type="text" name="repo" id="repo">
     </div>
     
     <div class="form-control mb-3 d-flex flex-column">
