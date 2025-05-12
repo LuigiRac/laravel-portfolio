@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('repo');
             $table->text('description');
+            $table->text('type');
             
             $table->timestamps();
         });

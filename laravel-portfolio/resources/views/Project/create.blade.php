@@ -1,0 +1,30 @@
+@extends('layouts.project')
+
+@section('title', 'Aggiungi un progetto')
+   
+@section('content')
+
+<form action="{{ route('project.store')}}" method="POST">
+    @csrf
+
+    <div class="form-control mb-3 d-flex flex-column">
+        <label for="name">Nome Repo</label>
+        <input type="text" name="name" id="name">
+    </div>
+
+    <div class="form-control mb-3 d-flex flex-column">
+        <label for="repo">Url Repo</label>
+        <input type="text" name="repo" id="repo"onblur="validateSingleUrl(this)">
+        <small id="urlHelp" class="form-text text-muted"></small>
+    </div>
+    
+    <div class="form-control mb-3 d-flex flex-column">
+        <label for="description">Descrizione Repo</label>
+        <input type="text" name="description" id="description">
+    </div>
+
+    <input class="btn btn-primary" type="submit" value='Salva'>
+
+</form>
+
+@endsection
