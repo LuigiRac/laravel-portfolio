@@ -14,5 +14,15 @@
 
   <div class="container text-center d-flex py-4 gap-3">
     <a class="btn btn-warning" href="{{route('project.edit', $project)}}">Modifica</a>
+
+
+    <form action="{{route('project.destroy', $project)}}" method="POST">
+      @csrf
+      @method('DELETE')
+     <input type="submit" class="btn btn-danger" value="Elimina">
+ </form>
+
   </div>
+
+  
 @endsection

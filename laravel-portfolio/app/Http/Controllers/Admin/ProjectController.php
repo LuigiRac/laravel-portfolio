@@ -77,14 +77,16 @@ class ProjectController extends Controller
 
         $project -> update();
 
-        return view('project.show', $project);
+        return redirect() -> route('project.show', $project);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        //
+        $project -> delete();
+
+        return redirect() -> route('project.index');
     }
 }
