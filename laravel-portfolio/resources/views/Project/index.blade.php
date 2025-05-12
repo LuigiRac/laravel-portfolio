@@ -15,7 +15,6 @@
       </tr>
     </thead>
     <tbody>
-
         @foreach ($projects as $project)
         <tr>
             <td>{{$project -> name}}</td>
@@ -26,7 +25,14 @@
               <a class="btn btn-info" href="{{route('project.show', $project -> id)}}">Visualizza</a>
             </td>
         </tr>
-
         @endforeach
+    </tbody>
+</table>
+
+        <div class="container">
+          <a class="btn btn-primary" href="{{route('project.create')}}">Aggiungi un progetto</a>
+        </div>
+        
 
 @endsection
+
