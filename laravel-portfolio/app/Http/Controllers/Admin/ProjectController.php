@@ -5,13 +5,12 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
 use App\Http\Controllers\Controller;
 
 class ProjectController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // INDEX
     public function index()
     {
         $projects = Project::all();
@@ -19,20 +18,17 @@ class ProjectController extends Controller
         return view ('project.index', compact('projects'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // CREATE
     public function create()
     {
         
         $types = type::all();
         // dd($types);
-        return view('project.create', compact('types'));
+        $technologies = technology::all();
+        return view('project.create', compact('types', 'technologies'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+   // STORE
     public function store(Request $request)
     {
         // dd($request);
@@ -48,12 +44,13 @@ class ProjectController extends Controller
 
         $newProject->save();
 
+        $newProject->technologies()->attach($data['technologies']);
+
+
         return redirect()->route('project.show', $newProject);
     }
 
-    /**
-     * Display the specified resource.
-     */
+    // SHOW
     public function show(Project $project)
     {
         // dd($project);
@@ -61,18 +58,14 @@ class ProjectController extends Controller
         // dd($project->type);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    // EDIT
     public function edit(Project $project)
     {
         $types = type::all();
         return view('project.edit', compact('project', 'types'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    // UPDATE
     public function update(Request $request, Project $project)
     {
         $data = $request->all();
@@ -88,9 +81,7 @@ class ProjectController extends Controller
         return redirect()->route('project.show', $project);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    // DELETE
     public function destroy(Project $project)
     {
         $project->delete();

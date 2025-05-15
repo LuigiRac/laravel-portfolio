@@ -16,10 +16,17 @@
         <label for="repo">Url Repo</label>
         <input type="text" name="repo" id="repo">
     </div>
-    
-    <div class="form-control mb-3 d-flex flex-column">
-        <label for="description">Descrizione Repo</label>
-        <input type="text" name="description" id="description">
+    <div class="form-control mb-3 d-flex flex-row">
+
+        @foreach ($technologies as $technology)
+
+        <div class="tag me-2">
+            <input type="checkbox" name="technologies[]" value="{{$technology->id}}" id="{{$technology->id}}">
+            <label for="{{$technology->id}}">{{$technology->name}}</label>
+        </div>
+            
+        @endforeach
+        
     </div>
 
     <div class="form-control mb-3 d-flex flex-column">
@@ -32,6 +39,13 @@
 
        </select>
     </div>
+    
+    <div class="form-control mb-3 d-flex flex-column">
+        <label for="description">Descrizione Repo</label>
+        <input type="text" name="description" id="description">
+    </div>
+
+    
 
     <input class="btn btn-primary" type="submit" value='Salva'>
 
