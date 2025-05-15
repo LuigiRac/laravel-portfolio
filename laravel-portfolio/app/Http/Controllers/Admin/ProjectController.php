@@ -54,8 +54,10 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         // dd($project);
+       // dd($project->technologies);
         return view ('project.show', compact('project'));
         // dd($project->type);
+         
     }
 
     // EDIT

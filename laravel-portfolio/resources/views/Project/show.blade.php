@@ -9,6 +9,18 @@
       <h5 class="card-title"><strong>URL Repo: </strong> <a href="{{$project->repo}}">{{$project->repo}}</a></h5>
       <p class="card-text">{{$project->description}}</p>
       <p class="card-text">{{$project->type->name}}</p>
+
+      <div class="gap-2 mb-3">
+        @forelse ($project->technologies as $technology)
+          <span class="badge" style="background-color:{{$technology->color}}">
+            {{$technology->name}}
+          </span>
+      @empty
+          
+      @endforelse
+      </div>
+      
+
       <div class="text-center d-flex gap-3">
         <a class="btn btn-warning" href="{{route('project.edit', $project)}}">Modifica</a>
         <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#exampleModal">
