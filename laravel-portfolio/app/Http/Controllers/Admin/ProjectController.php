@@ -53,6 +53,7 @@ class ProjectController extends Controller
     {
         // dd($project);
         return view ('project.show', compact('project'));
+        // dd($project -> type);
     }
 
     /**
