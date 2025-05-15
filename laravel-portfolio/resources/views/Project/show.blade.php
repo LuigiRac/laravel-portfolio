@@ -8,6 +8,7 @@
     <div class="card-body">
       <h5 class="card-title"><strong>URL Repo: </strong> <a href="{{$project -> repo}}">{{$project -> repo}}</a></h5>
       <p class="card-text">{{$project -> description}}</p>
+      <p class="card-text">{{$project -> type -> name}}</p>
     </div>
   </div>
 
