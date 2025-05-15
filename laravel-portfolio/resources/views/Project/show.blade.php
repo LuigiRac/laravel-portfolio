@@ -13,21 +13,24 @@
   </div>
 
 
-  <div class="container text-center d-flex py-4 gap-3">
+<div class="container text-center d-flex py-4 gap-3">
+
+   <a class="btn btn-info" href="{{route('project.index', $project)}}">Torna alla Home</a>
     <a class="btn btn-warning" href="{{route('project.edit', $project)}}">Modifica</a>
 
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Elimina
   </button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina il progetto</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
+    </div>
+      <div class="modal-body">
           Sei sicuro di voler eliminare il progetto?
         </div>
       <div class="modal-footer">
