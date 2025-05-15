@@ -11,7 +11,7 @@
         <th scope="col">Nome Repo</th>
         <th scope="col">Url Repo</th>
         <th scope="col">Descrizione Repo</th>
-        {{-- <th scope="col">Tipo</th> --}}
+        
       </tr>
     </thead>
     <tbody>
@@ -20,7 +20,7 @@
             <td>{{$project -> name}}</td>
             <td><a href="{{$project -> repo}}">{{$project -> repo}}</a></td>
             <td>{{$project -> description}}</td>
-            {{-- <td>{{$project->type}}</td> --}}
+          
             <td>
               <a class="btn btn-info" href="{{route('project.show', $project -> id)}}">Visualizza</a>
             </td>
