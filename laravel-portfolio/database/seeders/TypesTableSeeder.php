@@ -14,31 +14,31 @@ class TypesTableSeeder extends Seeder
     public function run(): void
     {
         $types = [
-            [
-                'name' => 'Laravel',
-                'description' => 'Framework PHP moderno e potente per lo sviluppo rapido di applicazioni web.',
-            ],
-            [
-                'name' => 'MySQL',
-                'description' => 'Sistema di gestione di database relazionale open-source ampiamente utilizzato per archiviare e gestire dati in modo efficiente e scalabile.',
-            ],
-            [
-                'name' => 'PHP',
-                'description' => 'Linguaggio di scripting lato server versatile e popolare, fondamentale per lo sviluppo web dinamico e la creazione di applicazioni backend.',
-            ],
-            [
-                'name' => 'React',
-                'description' => 'Libreria JavaScript per la costruzione di interfacce utente interattive e dinamiche, focalizzata sulla creazione di componenti riutilizzabili.',
-            ],
-            [
-                'name' => 'JavaScript',
-                'description' => 'Linguaggio di scripting essenziale per lo sviluppo web frontend, che consente di aggiungere interattività, dinamicità e logica alle pagine HTML.',
-            ],
-            [
-                'name' => 'HTML',
-                'description' => 'Linguaggio di markup standard per la creazione della struttura e del contenuto delle pagine web.',
-            ],
-        ];
+    [
+        'name' => 'Front-end Development',
+        'description' => 'Sviluppo di interfacce utente interattive e responsive per applicazioni web, focalizzandosi sull\'esperienza utente e sull\'aspetto visivo.',
+    ],
+    [
+        'name' => 'Back-end Development',
+        'description' => 'Sviluppo della logica del server, gestione dei database e creazione di API per supportare le funzionalità delle applicazioni web e mobile.',
+    ],
+    [
+        'name' => 'Full-stack Development',
+        'description' => 'Competenze complete nello sviluppo sia del front-end che del back-end, in grado di gestire l\'intero ciclo di vita di un\'applicazione.',
+    ],
+    [
+        'name' => 'Mobile Development',
+        'description' => 'Sviluppo di applicazioni per dispositivi mobili, sia su piattaforme native (iOS, Android) che con framework cross-platform.',
+    ],
+    [
+        'name' => 'Data Science',
+        'description' => 'Analisi di dati complessi, applicazione di tecniche di machine learning e creazione di visualizzazioni per estrarre informazioni significative e prendere decisioni informate.',
+    ],
+    [
+        'name' => 'UI/UX Design',
+        'description' => 'Progettazione di interfacce utente intuitive ed efficaci, focalizzandosi sull\'esperienza dell\'utente, l\'usabilità e l\'accessibilità.',
+    ],
+];
 
         foreach ($types as $type){
             $newType = new Type();
