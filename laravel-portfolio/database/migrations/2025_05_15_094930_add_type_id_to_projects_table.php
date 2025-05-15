@@ -15,7 +15,7 @@ return new class extends Migration
             
             $table->dropColumn('type');
 
-            $table->foreignId('type_id') -> nullable() -> costrained();
+            $table->foreignId('type_id')->nullable()->costrained();
 
         });
     }
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table ->string('type');
+            $table->string('type');
 
             $table->dropForeign('projects_type_id_foreign');
 
