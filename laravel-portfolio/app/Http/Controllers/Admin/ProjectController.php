@@ -25,6 +25,7 @@ class ProjectController extends Controller
         $types = type::all();
         // dd($types);
         $technologies = technology::all();
+
         return view('project.create', compact('types', 'technologies'));
     }
 
@@ -44,8 +45,11 @@ class ProjectController extends Controller
 
         $newProject->save();
 
-        $newProject->technologies()->attach($data['technologies']);
-
+        if($request->has('technologies')){
+            $newProject->technologies()->attach($data['technologies']);
+            
+        }
+        
 
         return redirect()->route('project.show', $newProject);
     }
